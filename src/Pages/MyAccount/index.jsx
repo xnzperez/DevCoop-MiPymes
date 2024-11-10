@@ -33,7 +33,7 @@ export const MyAccount = () => {
         <form className="space-y-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-2">
             <InputForm
-              label="name"
+              label="Nombre"
               type="name"
               id="name"
               defaultValue={date.name}
@@ -61,7 +61,7 @@ export const MyAccount = () => {
           </div>
           <div className="mt-2">
             <InputForm
-              label="password"
+              label="Contraseña"
               type="password"
               id="password"
               defaultValue={date.password}
