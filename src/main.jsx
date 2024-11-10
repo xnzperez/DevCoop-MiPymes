@@ -4,9 +4,9 @@ import { App } from './Pages/App/App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
- <StrictMode>
+<StrictMode>
 <App />
- </StrictMode>
+</StrictMode>
     
 
 )

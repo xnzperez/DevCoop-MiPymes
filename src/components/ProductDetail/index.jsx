@@ -41,14 +41,14 @@ export const ProductDetail = () => {
             </h5>
             {context.productToShow.category && (
               <h5 className="text-sm font-medium py-4 font-sans">
-                Category: {context.productToShow.category.name}
+                Categoría: {context.productToShow.category.name}
               </h5>
             )}
           </figcaption>
         </figure>
       </div>
       <article className="text-wrap py-1 md:px-12 px-8">
-        <h3 className="font-medium">DESCRIPTION</h3>
+        <h3 className="font-medium">Descripción</h3>
         <p className="font-sans text-sm">{context.productToShow.description}</p>
       </article>
     </aside>

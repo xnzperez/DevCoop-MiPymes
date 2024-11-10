@@ -17,12 +17,11 @@ export const MyOrder = () => {
         <Link to={"/my-orders"} className="cursor-pointer">
           <ArrowLeft fillcolor="transparent" />
         </Link>
-       <div className="">
-       <h3 className="text-2xl">Your Orders</h3> 
+      <div className="">
+      <h3 className="text-2xl">Tus Ordenes</h3> 
         
-        <p>Check the status of recent orders, manage returns, and
-        discover similar products.</p>
-       </div>
+        <p>Consulta el estado de tus ordenes pendientes</p>
+      </div>
       </div>
       <div className="flex flex-col max-w-full">
         {context.order?.[index]?.product.map((product) => (

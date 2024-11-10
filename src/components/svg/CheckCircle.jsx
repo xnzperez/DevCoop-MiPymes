@@ -13,4 +13,4 @@ export const CheckCircle = ({fillColor}) => {
       />
     </svg>
   );
-};
+}; 

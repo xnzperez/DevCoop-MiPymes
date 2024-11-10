@@ -55,7 +55,7 @@ export const SignIn = () => {
       <div className="flex sm:mx-auto sm:w-80 sm:max-w-sm min-h-full flex-col justify-center px-10 py-10 lg:px-8 border-2 rounded-lg gap-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Welcome
+            Bienvenido a Dev Coop
           </h2>
         </div>
 
@@ -101,7 +101,7 @@ export const SignIn = () => {
 
           <div className="pt-3">
             <Button type="submit" className="justify-center">
-              Create
+              Crear Cuenta
             </Button>
           </div>
         </form>
@@ -114,40 +114,40 @@ export const SignIn = () => {
       <div className="flex min-h-full flex-col justify-center px-6 py-10 lg:px-8 md:border-2 lg:border-2 rounded-lg gap-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign in to your account
+            Inicia Sesión con tu Cuenta
           </h2>
         </div>
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-3">
             <div className="mt-2">
               <InputForm
-                label="email"
+                label="Email"
                 type="email"
                 id="email"
                 ref={ref}
                 defaultValue={formValues.email}
                 // {...register("email", { required: "email is required" })}
-                placeholder="insert to email"
+                placeholder="Inserta tu email"
                 className = "w-full"
               />
               {/* {errors?.email?.message} */}
             </div>
             <div className="mt-2">
               <InputForm
-                label="password"
+                label="Contraseña"
                 type="password"
                 id="password"
                 ref={ref}
                 defaultValue={formValues.password}
                 // {...register("password", { required: "password is required" })}
-                placeholder="insert to password"
+                placeholder="Ingresa Contraseña"
                 className = "w-full"
               />
               {/* {errors?.password?.message} */}
             </div>
             <div className="text-sm flex justify-end">
               <a className="font-semibold text-black hover:text-slate-400">
-                Forgot password?
+                ¿Olvidaste tú contraseña?
               </a>
             </div>
             <div className="flex justify-center">
@@ -157,7 +157,7 @@ export const SignIn = () => {
                 disabled={!isUserAccount}
                 className="justify-center"
               >
-                Login
+                Iniciar Sesión
               </Button>
             </div>
           </form>
@@ -169,10 +169,15 @@ export const SignIn = () => {
             disabled={isUserAccount}
             className="justify-center"
           >
-            Sign up
+            Registrarse
           </Button>
         </div>
+
+        
       </div>
+      
+
+      
     );
   };
   const renderView = () =>

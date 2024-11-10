@@ -27,7 +27,7 @@ export const MyAccount = () => {
       <div className="flex sm:mx-auto sm:w-80 sm:max-w-sm min-h-full flex-col justify-center px-10 py-10 lg:px-8 border-2 rounded-lg gap-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Edit personal account
+            Edita tu cuenta personal
           </h2>
         </div>
         <form className="space-y-3" onSubmit={handleSubmit(onSubmit)}>
@@ -47,13 +47,13 @@ export const MyAccount = () => {
           </div>
           <div className="mt-2">
             <InputForm
-              label="email"
+              label="Email"
               type="email"
               id="email"
               defaultValue={date.email}
-              {...register("email", { required: "email is required" })}
+              {...register("email", { required: "Se requiere un e-mail" })}
               autoComplete="on"
-              placeholder="insert to email"
+              placeholder="Inserta un e-mail"
               className = "w-full"
               required
             />
@@ -66,17 +66,17 @@ export const MyAccount = () => {
               id="password"
               defaultValue={date.password}
               {...register("password", {
-                required: "password is required",
+                required: "Se requiere una contraseña",
               })}
               autoComplete="on"
-              placeholder="insert to password"
+              placeholder="Inserta una contraseña"
               className = "w-full"
             />
             {errors?.password?.message}
           </div>
           <div className="flex justify-center pt-4">
             <Button type="submit" className="justify-center">
-              Edit
+              Editar
             </Button>
           </div>
         </form>

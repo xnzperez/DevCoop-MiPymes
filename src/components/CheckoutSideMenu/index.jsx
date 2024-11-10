@@ -33,7 +33,7 @@ export const CheckoutSideMenu = () => {
       } checkout-side-menu flex-col fixed right-2 top-16 border border-black rounded-lg bg-white checkout-side-menu`}
     >
       <div className="flex justify-between items-center py-6 pl-6 pr-1.2">
-        <h2 className="font-medium text-xl">My Orders</h2>
+        <h2 className="font-medium text-xl">Mis Ordenes</h2>
         <div
           className="cursor-pointer"
           onClick={() => context.CloseCheckoutSideMenu()}
@@ -65,7 +65,7 @@ export const CheckoutSideMenu = () => {
       {context.signOut ? (
         <NavLink to={"sign-in"} className="flex justify-center p-4">
           <button className="bg-black text-md text-white rounded-md w-full h-11">
-            Please Login
+            Inicia Sesión
           </button>
         </NavLink>
       ) : (
@@ -76,10 +76,11 @@ export const CheckoutSideMenu = () => {
             }}
             className="bg-black text-md text-white rounded-md w-full h-11"
           >
-            Checkout
+            Verificar Pedido
           </button>
         </NavLink>
       )}
     </aside>
+
   );
 };

@@ -64,7 +64,7 @@ export const CardUI = ({
         <div className="flex justify-center p-2">
           <Button className="justify-center">
             <CheckCircle fillColor="transparent" />
-            Added To Cart
+            Añadido al Carrito
           </Button>
         </div>
       ) : (
@@ -76,7 +76,7 @@ export const CardUI = ({
             className="justify-center"
           >
             <PlusCircle fillColor="transparent" />
-            Add To Card
+            Añadir al Carrito de Compra
           </Button>
         </div>
       )}

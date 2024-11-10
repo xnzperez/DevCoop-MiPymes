@@ -8,13 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-	  "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "axios": "^1.7.3",
     "caniuse-lite": "^1.0.30001649",
     "cors": "^2.8.5",
+    "firebase": "^11.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.53.0",

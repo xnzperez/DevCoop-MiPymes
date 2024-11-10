@@ -6,61 +6,57 @@ import { initializeLocalStorage } from "../utils/localStorageUtils";
 
 export const ShoppingCartContext = createContext();
 initializeLocalStorage();
+
 export const ShoppingCartProvider = ({ children }) => {
   const [count, setCount] = useState(0);
-
   const [account, setAccount] = useState({});
   const [signOut, setSignOut] = useState(false);
-
   const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
   const [productToShow, setProductToShow] = useState({});
   const [cartProducts, setCartProducts] = useState([]);
   const [order, setOrder] = useState([]);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]);  // Aquí se almacenan todos los productos
   const [loading, setLoading] = useState(false);
   const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [filterItem, setFilterItem] = useState(null);
-  const debouncedSearch = useDebounce(search, 500);
- 
- 
-  
+  const [filterItem, setFilterItem] = useState([]);  // Lista filtrada de productos
 
-  useEffect(() => {
-    if (debouncedSearch.length > 0) {
-      setFilterItem(
-        data?.filter((item) =>
-          item.category.name
-            .toLowerCase()
-            .includes(debouncedSearch.toLowerCase())
-        )
-      );
-    } else {
-      setFilterItem(data);
-    }
-  }, [data, debouncedSearch]);
+  // `debouncedSearch` para optimizar la búsqueda, evitando múltiples solicitudes
+  const debouncedSearch = useDebounce(search, 300);
 
+  // Llamada a la API para obtener los productos (solo se realiza una vez)
   useEffect(() => {
     async function fetchAPI() {
       setLoading(true);
       try {
         const response = await axios.get(URLAPI);
-        setData(response.data);
+        setData(response.data);  // Guardamos todos los productos en `data`
         setLoading(false);
       } catch (error) {
         console.error(error);
-      } finally {
-        console.info("finally")
+        setLoading(false);
       }
     }
     fetchAPI();
-  }, []);
+  }, []);  // Solo se ejecuta una vez cuando el componente se monta
+
+  // Filtrar productos según el término de búsqueda (debouncedSearch)
+  useEffect(() => {
+    if (debouncedSearch.length > 0) {
+      const filteredData = data.filter((item) =>
+        item.category.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+        item.title.toLowerCase().includes(debouncedSearch.toLowerCase())  // Se puede buscar por título también
+      );
+      setFilterItem(filteredData);  // Actualizamos la lista filtrada
+    } else {
+      setFilterItem(data);  // Si no hay búsqueda, mostramos todos los productos
+    }
+  }, [debouncedSearch, data]);  // Este `useEffect` se ejecuta cada vez que `debouncedSearch` o `data` cambian
 
   const openProductDetail = () => setIsProductDetailOpen(true);
   const CloseProductDetail = () => setIsProductDetailOpen(false);
   const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true);
   const CloseCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false);
-
 
   return (
     <ShoppingCartContext.Provider
@@ -84,11 +80,11 @@ export const ShoppingCartProvider = ({ children }) => {
         setData,
         search,
         setSearch,
-        filterItem,
+        filterItem,  // Los productos filtrados se pasan a los hijos
         debouncedSearch,
-        account, 
+        account,
         setAccount,
-        signOut, 
+        signOut,
         setSignOut
       }}
     >

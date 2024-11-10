@@ -38,7 +38,7 @@ const NavLinks = () => {
             onClick={() => handleSignOut()}
             style={getNavLinkStyle}
           >
-            Sign out
+            Iniciar Sesión
           </NavLink>
         </li>
       );
@@ -48,12 +48,12 @@ const NavLinks = () => {
           <li className="text-white list-none">{formValues.email}</li>
           <li className="list-none">
             <NavLink to="/my-orders"  style={getNavLinkStyle}>
-              My Orders
+              Mis Ordenes
             </NavLink>
           </li>
           <li className="list-none">
             <NavLink to="my-account" style={getNavLinkStyle}>
-              My Account
+              Mi Cuenta
             </NavLink>
           </li>
           <li className="list-none">
@@ -63,7 +63,7 @@ const NavLinks = () => {
               onClick={() => handleSignOut()}
             
             >
-              Sign out
+              Cerrar Sesión
             </NavLink>
           </li>
         </div>
@@ -73,32 +73,32 @@ const NavLinks = () => {
   return (
     <>
       <NavLink to="/" style={getNavLinkStyle}>
-        All
+        Inicio
       </NavLink>
 
       <NavLink to="/Clothes" style={getNavLinkStyle}>
-        Clothes
+        Ropa
       </NavLink>
 
       <NavLink to="/Electronics" style={getNavLinkStyle}>
-        Electronics
+        Electrónica
       </NavLink>
 
       <NavLink to="/Furniture" style={getNavLinkStyle}>
-        Furnitures
+        Muebles
       </NavLink>
 
       <NavLink to="/Miscellaneous" style={getNavLinkStyle}>
-        Miscellaneous
+      Misceláneas
       </NavLink>
 
       <NavLink to="/Shoes" style={getNavLinkStyle}>
-        Shoes
+        Zapatos
       </NavLink>
 
-     <div>
-     {renderView()}
-     </div>
+    <div>
+    {renderView()}
+    </div>
       <li
         className="flex gap-1 cursor-pointer list-none"
         onClick={(event) => openCart(event)}

@@ -65,12 +65,12 @@ export const Home = () => {
       <div className=" gap-4">
         <InputForm
           type="search"
-          placeholder="Search product Favorite"
+          placeholder="Buscar Producto"
           className="rounded-3xl w-72 md:w-96 h-10 text-center border border-slate-600 focus:outline-none"
           onChange={(e) => context.setSearch(e.target.value)}
           value={context.debouncedSearch}
         />
-         </div>
+        </div>
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-7 w-auto max-w-screen-lg lg:grid-cols-3 items-center">
               {renderView()}
