@@ -76,7 +76,7 @@ export const CheckoutSideMenu = () => {
             }}
             className="bg-black text-md text-white rounded-md w-full h-11"
           >
-            Verificar Pedido
+            Realizar Pedido
           </button>
         </NavLink>
       )}

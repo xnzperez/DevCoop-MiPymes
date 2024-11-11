@@ -96,6 +96,10 @@ const NavLinks = () => {
         Zapatos
       </NavLink>
 
+      <NavLink to="/About" style={getNavLinkStyle}>
+        Acerca de Nosotros
+      </NavLink>
+
     <div>
     {renderView()}
     </div>

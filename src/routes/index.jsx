@@ -4,6 +4,8 @@ import { MyAccount } from "../Pages/MyAccount";
 import { MyOrder } from "../Pages/MyOrder";
 import { MyOrders } from "../Pages/MyOrders";
 import { SignIn } from "../Pages/SignIn/SignIn";
+import AboutComponent from "../Pages/About/AboutComponent";
+
 import { useContext } from "react";
 import { ShoppingCartContext } from "../context";
 
@@ -38,6 +40,10 @@ export const AppRoutes = () => {
     {
       path: "/sign-in",
       element: <SignIn />,
+    },
+    {
+      path: "/about", 
+      element: <AboutComponent />,
     },
   ]);
   return routes;
