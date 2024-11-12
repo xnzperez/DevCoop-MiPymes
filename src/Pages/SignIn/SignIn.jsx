@@ -62,11 +62,11 @@ export const SignIn = () => {
         <form className="space-y-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-2">
             <InputForm
-              label="name"
+              label="Nombre"
               type="text"
               id="name"
               {...register("name")}
-              placeholder="insert to name"
+              placeholder="Inserta tu nombre"
               className = "w-full"
               required
             />
@@ -75,11 +75,11 @@ export const SignIn = () => {
 
           <div className="mt-2">
             <InputForm
-              label="email"
+              label="E-mail"
               type="text"
               id="email"
               {...register("email")}
-              placeholder="insert to email"
+              placeholder="Inserta tu e-mail"
               className = "w-full"
               required
             />
@@ -88,11 +88,11 @@ export const SignIn = () => {
 
           <div className="mt-2">
             <InputForm
-              label="password"
+              label="Contaseña"
               type="text"
               id="password"
               {...register("password")}
-              placeholder="insert to password"
+              placeholder="Inserta tu contraseña"
               className = "w-full"
               required
             />
