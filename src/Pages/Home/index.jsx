@@ -39,7 +39,7 @@ export const Home = () => {
           />
         ));
       } else {
-        return <div>There are nothing to see</div>;
+        return <div>No hay productos para ver</div>;
       }
     }
     } else {
