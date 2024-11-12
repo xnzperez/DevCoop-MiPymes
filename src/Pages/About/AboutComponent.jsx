@@ -47,12 +47,12 @@ const AboutComponent = () => {
           Conoce a Nuestro Equipo
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8">
-          {/* Miembro del equipo 1 */}
+          {/* Miembro Carlos Pérez*/}
           <article className="rounded-xl border border-gray-700 bg-gray-800 p-4 hover:border-pink-600 transition duration-300 ease-in-out">
             <div className="flex items-center gap-4">
               <img
                 alt="Carlos Pérez"
-                src="https://via.placeholder.com/150" // Reemplazar con la foto de Carlos Pérez
+                src="https://via.placeholder.com/150" 
                 className="size-16 rounded-full object-cover"
               />
               <div>
@@ -84,12 +84,12 @@ const AboutComponent = () => {
             </ul>
           </article>
 
-          {/* Miembro del equipo 2 */}
+          {/* Miembro Juan Ramos */}
           <article className="rounded-xl border border-gray-700 bg-gray-800 p-4 hover:border-pink-600 transition duration-300 ease-in-out">
             <div className="flex items-center gap-4">
               <img
                 alt="Juan Ramos"
-                src="https://via.placeholder.com/150" // Reemplazar con la foto de Juan Ramos
+                src="https://via.placeholder.com/150" 
                 className="size-16 rounded-full object-cover"
               />
               <div>
