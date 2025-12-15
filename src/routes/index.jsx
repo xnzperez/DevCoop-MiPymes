@@ -3,7 +3,7 @@ import { Home } from "../Pages/Home";
 import { MyAccount } from "../Pages/MyAccount";
 import { MyOrder } from "../Pages/MyOrder";
 import { MyOrders } from "../Pages/MyOrders";
-import { SignIn } from "../Pages/SignIn/SignIn";
+import { SignIn } from "../Pages/SignIn/index";
 import AboutComponent from "../Pages/About/AboutComponent";
 
 import { useContext } from "react";
@@ -42,7 +42,7 @@ export const AppRoutes = () => {
       element: <SignIn />,
     },
     {
-      path: "/about", 
+      path: "/about",
       element: <AboutComponent />,
     },
   ]);

@@ -8,19 +8,35 @@ export const InputForm = forwardRef(
       id,
       className,
       placeholder,
-      ...props // Use ...props to get everything else
+      ...props // Resto de props (register, onBlur, etc.)
     },
     ref
   ) => {
     return (
-      <div className="mb-4">
-        <label htmlFor={id} className={`text-sm font-medium leading-6 text-gray-900`}>{label}</label>
+      <div className="mb-4 w-full">
+        {/* Label: Texto blanco */}
+        <label
+          htmlFor={id}
+          className="block text-sm font-medium leading-6 text-white mb-2"
+        >
+          {label}
+        </label>
+
+        {/* Input: Fondo oscuro, Borde sutil, Texto blanco */}
         <input
           ref={ref}
           type={type}
           id={id}
           placeholder={placeholder}
-          className={`px-3 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-100 sm:text-sm sm:leading-6 ${className}`}
+          className={`
+            block w-full rounded-xl border-0 py-3 px-4 
+            bg-zinc-800 text-white shadow-sm 
+            ring-1 ring-inset ring-zinc-700 
+            placeholder:text-zinc-500 
+            focus:ring-2 focus:ring-inset focus:ring-white 
+            sm:text-sm sm:leading-6 transition-all duration-200
+            ${className}
+          `}
           {...props}
         />
       </div>
@@ -28,4 +44,5 @@ export const InputForm = forwardRef(
   }
 );
 
-export const ref = React.createRef();
+// Esto ayuda a React DevTools a identificar el componente
+InputForm.displayName = "InputForm";

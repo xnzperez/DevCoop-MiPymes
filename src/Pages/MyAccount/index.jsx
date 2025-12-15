@@ -1,13 +1,14 @@
 import "../../App.css";
 import { useForm } from "react-hook-form";
 import { Layout } from "../../components/Layout";
-import { InputForm} from "../../components/ui";
+import { InputForm } from "../../components/ui";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../context";
 import { Button } from "../../components/ui/Button";
 
 export const MyAccount = () => {
   const context = useContext(ShoppingCartContext);
+
   const {
     register,
     handleSubmit,
@@ -15,71 +16,104 @@ export const MyAccount = () => {
   } = useForm({
     shouldUnregister: true,
   });
-  const date = JSON.parse(localStorage.getItem("account"));
+
+  const accountData = JSON.parse(localStorage.getItem("account")) || {};
 
   const onSubmit = (data) => {
     localStorage.setItem("account", JSON.stringify(data));
     context.setAccount(data);
+    alert("Datos actualizados correctamente");
   };
 
   return (
     <Layout>
-      <div className="flex sm:mx-auto sm:w-80 sm:max-w-sm min-h-full flex-col justify-center px-10 py-10 lg:px-8 border-2 rounded-lg gap-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Edita tu cuenta personal
-          </h2>
+      <div className="flex items-center justify-center min-h-[60vh] w-full animate-fade-in">
+        {/* Contenedor Principal: Fondo Oscuro (zinc-950) y Borde sutil */}
+        <div className="flex flex-col justify-center px-8 py-10 w-full max-w-md bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl">
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm mb-8 text-center">
+            <h2 className="text-2xl font-bold leading-9 tracking-tight text-white">
+              Edita tu cuenta personal
+            </h2>
+            <p className="text-zinc-400 text-sm mt-1">
+              Mantén tus datos actualizados
+            </p>
+          </div>
+
+          <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
+            {/* NOMBRE */}
+            <div>
+              <InputForm
+                label="Nombre"
+                type="text"
+                id="name"
+                defaultValue={accountData.name}
+                // !bg-zinc-900 y !text-white fuerzan el modo oscuro
+                className="!bg-zinc-900 !text-white !border-zinc-700 focus:!ring-white"
+                placeholder="Tu nombre completo"
+                {...register("name", { required: "El nombre es obligatorio" })}
+              />
+              {errors?.name && (
+                <span className="text-red-400 text-xs mt-1 block">
+                  {errors.name.message}
+                </span>
+              )}
+            </div>
+
+            {/* EMAIL */}
+            <div>
+              <InputForm
+                label="E-mail"
+                type="email"
+                id="email"
+                defaultValue={accountData.email}
+                className="!bg-zinc-900 !text-white !border-zinc-700 focus:!ring-white"
+                placeholder="correo@ejemplo.com"
+                {...register("email", { required: "Se requiere un e-mail" })}
+              />
+              {errors?.email && (
+                <span className="text-red-400 text-xs mt-1 block">
+                  {errors.email.message}
+                </span>
+              )}
+            </div>
+
+            {/* CONTRASEÑA */}
+            <div>
+              <InputForm
+                label="Contraseña"
+                type="password"
+                id="password"
+                defaultValue={accountData.password}
+                className="!bg-zinc-900 !text-white !border-zinc-700 focus:!ring-white"
+                placeholder="••••••••"
+                {...register("password", {
+                  required: "Se requiere una contraseña",
+                  minLength: { value: 8, message: "Mínimo 8 caracteres" },
+                  pattern: {
+                    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
+                    message:
+                      "Requiere mayúscula, minúscula, número y símbolo (!@#$)",
+                  },
+                })}
+              />
+              {errors?.password && (
+                <span className="text-red-400 text-xs mt-1 block">
+                  {errors.password.message}
+                </span>
+              )}
+            </div>
+
+            <div className="pt-4">
+              {/* Botón: Fondo Blanco (!bg-white) y Texto Negro (!text-black) */}
+              <Button
+                type="submit"
+                className="w-full !bg-white !text-black hover:!bg-zinc-200 font-bold py-3 rounded-xl transition-colors"
+              >
+                Guardar Cambios
+              </Button>
+            </div>
+          </form>
         </div>
-        <form className="space-y-3" onSubmit={handleSubmit(onSubmit)}>
-          <div className="mt-2">
-            <InputForm
-              label="Nombre"
-              type="name"
-              id="name"
-              defaultValue={date.name}
-              {...register("name", { required: "name is required" })}
-              autoComplete="on"
-              placeholder="insert to name"
-              className = "w-full"
-              required
-            />
-            {errors?.name?.message}
-          </div>
-          <div className="mt-2">
-            <InputForm
-              label="Email"
-              type="email"
-              id="email"
-              defaultValue={date.email}
-              {...register("email", { required: "Se requiere un e-mail" })}
-              autoComplete="on"
-              placeholder="Inserta un e-mail"
-              className = "w-full"
-              required
-            />
-            {errors?.email?.message}
-          </div>
-          <div className="mt-2">
-            <InputForm
-              label="Contraseña"
-              type="password"
-              id="password"
-              defaultValue={date.password}
-              {...register("password", {
-                required: "Se requiere una contraseña",
-              })}
-              autoComplete="on"
-              placeholder="Inserta una contraseña"
-              className = "w-full"
-            />
-            {errors?.password?.message}
-          </div>
-          <div className="flex justify-center pt-4">
-            <Button type="submit" className="justify-center">
-              Editar
-            </Button>
-          </div>
-        </form>
       </div>
     </Layout>
   );
