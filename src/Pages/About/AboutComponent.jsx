@@ -69,16 +69,16 @@ const AboutComponent = () => {
         <div className="flex justify-center">
           {/* Miembro Carlos Pérez */}
           <article className="w-full max-w-md rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 hover:border-zinc-500 hover:bg-zinc-900 transition-all duration-300 ease-in-out shadow-lg">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-center text-center">
               <img
                 alt="Carlos Pérez"
-                src="https://via.placeholder.com/150"
-                className="size-20 rounded-full object-cover border-2 border-zinc-700"
+                src="/photo-me.webp"
+                className="size-20 rounded-full object-cover border-2 border-zinc-700 mb-4"
               />
-              <div>
+              <div className="w-full">
                 <h3 className="text-xl font-bold text-white">Carlos Pérez</h3>
-                <div className="flow-root mt-2">
-                  <ul className="-m-1 flex flex-wrap gap-2">
+                <div className="mt-2">
+                  <ul className="flex flex-wrap justify-center gap-2">
                     <li className="leading-none">
                       <a
                         href="https://www.linkedin.com/in/xnzperez/"
@@ -86,8 +86,7 @@ const AboutComponent = () => {
                         rel="noreferrer"
                         className="text-xs font-medium text-zinc-400 hover:text-white hover:underline transition-colors"
                       >
-                        {" "}
-                        LinkedIn{" "}
+                        LinkedIn
                       </a>
                     </li>
                     <li className="leading-none text-zinc-600">•</li>
@@ -98,8 +97,7 @@ const AboutComponent = () => {
                         rel="noreferrer"
                         className="text-xs font-medium text-zinc-400 hover:text-white hover:underline transition-colors"
                       >
-                        {" "}
-                        GitHub{" "}
+                        GitHub
                       </a>
                     </li>
                     <li className="leading-none text-zinc-600">•</li>
@@ -110,8 +108,7 @@ const AboutComponent = () => {
                         rel="noreferrer"
                         className="text-xs font-medium text-zinc-400 hover:text-white hover:underline transition-colors"
                       >
-                        {" "}
-                        WhatsApp{" "}
+                        WhatsApp
                       </a>
                     </li>
                   </ul>

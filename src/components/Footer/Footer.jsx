@@ -65,7 +65,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-zinc-400 text-center md:text-left">
-            © 2024 Dev Coop. Desarrollado por Carlos Pérez.
+            2024 Dev Coop. Desarrollado por Carlos Pérez.
           </p>
         </div>
       </div>
@@ -73,5 +73,4 @@ const Footer = () => {
   );
 };
 
-// ESTA LÍNEA ES LA QUE FALTABA PARA CORREGIR EL ERROR
 export default Footer;
