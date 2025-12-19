@@ -42,7 +42,7 @@ El sistema consume datos dinámicos utilizando la **Platzi Fake Store API**, sim
 
 ## 📸 Previsualización
 
-*(Aquí puedes agregar las capturas de pantalla de tu proyecto, por ejemplo la Home y el Detalle de Producto)*
+<img width="1896" height="991" alt="image" src="https://github.com/user-attachments/assets/272bef93-727b-4060-80bd-6ac76cebd111" />
 
 ## 🚀 Instalación y Despliegue
 
@@ -50,12 +50,12 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 1.  **Clonar el repositorio**
     ```bash
-    git clone [https://github.com/xnzperez/shopping-fashion.git](https://github.com/xnzperez/shopping-fashion.git)
+    git clone https://github.com/xnzperez/DevCoop-MiPymes.git
     ```
 
 2.  **Entrar al directorio**
     ```bash
-    cd shopping-fashion
+    cd DevCoop-MiPymes
     ```
 
 3.  **Instalar dependencias**
