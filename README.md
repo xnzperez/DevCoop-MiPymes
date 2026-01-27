@@ -81,7 +81,7 @@ Las contribuciones son bienvenidas. Si tienes sugerencias para mejorar este prot
 ## ✒️ Autor
 
 **Carlos Pérez**
-* **Rol:** Full Stack Developer & Estudiante de Ingeniería de Sistemas (UCC).
+* **Rol:** Lead Developer.
 * **Portafolio:** [xnzperez-portfolio.vercel.app](https://xnzperez-portfolio.vercel.app/)
 * **LinkedIn:** [Carlos Pérez](https://www.linkedin.com/in/xnzperez/)
 
